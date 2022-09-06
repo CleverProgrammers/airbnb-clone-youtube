@@ -9,10 +9,7 @@ import AddListingModal from '../components/listing/AddListingModal'
 import EditListingModal from '../components/listing/EditListingModal'
 import { useWallet } from '@solana/wallet-adapter-react'
 import ReserveListingModal from '../components/listing/ReserveListingModal'
-import { useAirbnb } from '../hooks/useAirbnb'
 import { format } from 'date-fns'
-import { PublicKey } from "@solana/web3.js";
-
 
 
 export default function Home() {
@@ -26,6 +23,7 @@ export default function Home() {
     const [currentReserveListingID, setCurrentReserveListingID] = useState(null)
     const currentEditListing = useMemo(() => listings.find((listing) => listing.id === currentEditListingID), [currentEditListingID])
     const displayListings = useMemo(() => (showReservedListing ? listings.filter((listing) => listing.isReserved) : listings), [showReservedListing, listings])
+    
     const toggleShowReservedListing = () => {
         setShowReservedListing(!showReservedListing)
     }
