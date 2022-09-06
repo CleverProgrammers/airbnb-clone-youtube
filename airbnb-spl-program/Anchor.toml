@@ -1,0 +1,18 @@
+[features]
+seeds = false
+
+[programs.localnet]
+airbnb_spl_program = "5YTCeDyKmUCBzC4updk1hD55MMmMSHtkKiiwunoxnu6P"
+
+[programs.devnet]
+airbnb_spl_program = "GeLf4WaVtKLXTdYYshoexrnE2Aw2Y72A1EfFS1Vn5rgf"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

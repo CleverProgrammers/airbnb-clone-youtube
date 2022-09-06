@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.phantom-button:hover {
+    background-color: rgb(243 244 246) !important;
+}
