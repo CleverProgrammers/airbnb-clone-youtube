@@ -2,7 +2,6 @@ import { GlobeAmericasIcon, Bars3Icon, UserCircleIcon, MagnifyingGlassIcon } fro
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import Image from 'next/image'
 import { truncate } from '../utils/string'
-require('@solana/wallet-adapter-react-ui/styles.css')
 
 function Header({ connected, publicKey, initializeUser , initialized, transactionPending}) {
     return (
@@ -42,17 +41,11 @@ function Header({ connected, publicKey, initializeUser , initialized, transactio
                     <GlobeAmericasIcon className="h-5 w-5 transition-all duration-300 text-gray-800" />
                 </div>
 
-                {/* <div className="flex items-center bg-white text-gray-500 space-x-2 border rounded-full px-2 py-1 cursor-pointer shadow-sm hover:shadow-md transition">
+                <div className="flex items-center bg-white text-gray-500 space-x-2 border rounded-full px-2 py-1 cursor-pointer shadow-sm hover:shadow-md transition">
                     <Bars3Icon className="h-5 w-5" />
 
                     <UserCircleIcon className="h-8 w-8" />
-                </div> */}
-                  {initialized ? (<></>) : (<button type="button" className="border border-transparent cursor-pointer hover:bg-gray-100 rounded-full px-3 py-2" onClick={() => initializeUser()} disabled = {transactionPending}>
-                        Initialize
-                    </button>)}  
-                <WalletMultiButton className="phantom-button" startIcon={<UserCircleIcon style={{ height: 32, width: 32, color: '#1f2937' }} />}>
-                    <span className="text-sm font-medium text-black">{connected ? truncate(publicKey.toString()) : 'Connect Wallet'}</span>
-                </WalletMultiButton>
+                </div>
             </div>
         </header>
     )

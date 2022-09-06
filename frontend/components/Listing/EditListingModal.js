@@ -15,8 +15,7 @@ export default function EditListingModal({ editListing, currentEditListing, edit
         e.preventDefault()
 
         editListing({
-            airbnbPda: currentEditListing.publicKey,
-            airbnbIdx: currentEditListing?.account.idx,
+            id: currentEditListing?.id,
             location,
             country,
             price,
@@ -45,22 +44,22 @@ export default function EditListingModal({ editListing, currentEditListing, edit
                                     <div className="grid grid-cols-1 gap-3">
                                         <label className="flex flex-col border rounded-lg px-3 py-2" htmlFor="location">
                                             <span className="text-xs font-light">Location</span>
-                                            <input placeholder={currentEditListing?.account.location} onChange={(e) => setLocation(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="text" id="location" name="location" />
+                                            <input placeholder={currentEditListing?.location} onChange={(e) => setLocation(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="text" id="location" name="location" />
                                         </label>
 
                                         <label className="flex flex-col border rounded-lg px-3 py-2" htmlFor="country">
                                             <span className="text-xs font-light">Country</span>
-                                            <input placeholder={currentEditListing?.account.country} onChange={(e) => setCountry(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="text" id="country" name="country" />
+                                            <input placeholder={currentEditListing?.country} onChange={(e) => setCountry(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="text" id="country" name="country" />
                                         </label>
 
                                         <label className="flex flex-col border rounded-lg px-3 py-2" htmlFor="price">
                                             <span className="text-xs font-light">Price</span>
-                                            <input placeholder={currentEditListing?.account.price} onChange={(e) => setPrice(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="number" id="price" name="price" />
+                                            <input placeholder={currentEditListing?.price} onChange={(e) => setPrice(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="number" id="price" name="price" />
                                         </label>
 
                                         <label className="flex flex-col border rounded-lg px-3 py-2" htmlFor="imageURL">
                                             <span className="text-xs font-light">Image URL</span>
-                                            <input placeholder={currentEditListing?.account.image} onChange={(e) => setImageURL(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="text" id="imageURL" name="imageURL" />
+                                            <input placeholder={currentEditListing?.imageURL} onChange={(e) => setImageURL(e.target.value)} className="outline-none bg-transparent text-sm pt-1" type="text" id="imageURL" name="imageURL" />
                                         </label>
                                     </div>
 
