@@ -42,7 +42,7 @@ function ListingItem({ id, connected, showReservedListing, location, country, di
                 <p className="text-sm font-light text-gray-600">{formatNumber(distance)} kilometers</p>
                 {showReservedListing && <p className="text-sm font-light text-gray-600">{reservation}</p>}
                 <p className="text-sm font-light text-gray-800 mt-2">
-                    <span className="text-base font-medium">RM {formatNumber(price)}</span>
+                    <span className="text-base font-medium">${formatNumber(price)}</span>
                     &nbsp;night
                 </p>
             </div>
